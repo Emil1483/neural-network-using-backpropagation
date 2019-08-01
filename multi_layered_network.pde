@@ -62,7 +62,7 @@ void mousePressed() {
 
 int imgNum = 0;
 void saveImg() {
-  save("output/img_" + imgNum + ".png");
+  save("output2/img_" + imgNum + ".jpg");
   imgNum ++;
 }
 
