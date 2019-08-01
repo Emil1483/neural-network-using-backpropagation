@@ -1,6 +1,6 @@
 float inputRange = 1;
-float learningRate = 10;
-int learningAmount = 50;
+float learningRate = 2;
+int learningAmount = 1;
 
 Network net;
 float[][] ins;
@@ -57,16 +57,16 @@ void mousePressed() {
   outs = (int[]) append(outs, newOut);
   totalData ++;
   showData();
-  saveImg();
 }
 
 int imgNum = 0;
 void saveImg() {
-  save("img_" + imgNum + ".png");
+  save("output/img_" + imgNum + ".png");
   imgNum ++;
 }
 
-void keyPressed() {
+void draw() {
+  if (!keyPressed) return;
   if (totalData <= 0) return;
   background(0);
   
@@ -83,7 +83,4 @@ void keyPressed() {
   
   showCurve();
   saveImg();
-  println("learnt: " + imgNum);
-}
-
-void draw() {}
+  println("learnt: " + imgNum);}
