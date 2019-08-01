@@ -1,6 +1,7 @@
 float inputRange = 1;
-float learningRate = 2;
-int learningAmount = 1;
+float learningRate = 3;
+int learningAmount = 2;
+int learningCount = 0;
 
 Network net;
 float[][] ins;
@@ -80,7 +81,8 @@ void draw() {
   Batch batch = new Batch(x, y);
   
   for (int i = 0; i < learningAmount; i++) net.update_batch(batch, learningRate);
+  learningCount += learningAmount;
   
   showCurve();
   saveImg();
-  println("learnt: " + imgNum);}
+  println("learnt: " + learningCount);}
